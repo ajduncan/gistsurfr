@@ -52,6 +52,9 @@ class UserRelationship(BaseModel):
     from_user = ForeignKeyField(User, related_name='relationships')
     to_user = ForeignKeyField(User, related_name='related_to')
 
+    class Meta:
+        db_table = 'gsfr_user_relationship'
+
 
 class UserGithub(BaseModel):
     user = ForeignKeyField(User)
