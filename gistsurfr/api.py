@@ -31,5 +31,5 @@ class FavoriteResource(RestResource):
 # register our models so they are exposed via /api/<model>/
 api.register(User, UserResource, auth=admin_auth)
 api.register(UserGithub, UserGithubResource, auth=admin_auth)
-api.register(USerRelationship, UserRelationshipResource, auth=user_auth)
+api.register(UserRelationship, UserRelationshipResource, auth=user_auth)
 api.register(UserFavorite, FavoriteResource, auth=user_auth)
