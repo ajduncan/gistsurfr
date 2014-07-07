@@ -1,0 +1,17 @@
+{% extends 'gistsurfr/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1>the bash.org of gists</h1>
+    <p>You can use gistsurfr to browse and favorite gists and share with friends.</p>
+    <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+  </div>
+</div>
+
+<div class="filler">
+{% if user %}
+<p>Welcome, {{ user.username }}!</p>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+/gistsurfr/settings.py
+gistsurfr.db
+/.env
+/logs
+__pycache__
+*.pyc
