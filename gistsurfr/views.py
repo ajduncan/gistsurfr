@@ -6,7 +6,7 @@ from flask_peewee.auth import Auth
 from gistsurfr.app import app, PEEWEE_DB
 from gistsurfr.auth import auth
 from gistsurfr.github import github
-from gistsurfr.models import User, UserGithub, UserFavorite
+from gistsurfr.models import User, UserGithub, UserGistFavorite
 
 
 

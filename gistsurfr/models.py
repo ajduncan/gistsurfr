@@ -67,18 +67,36 @@ class UserGithub(BaseModel):
         return self.user.username
 
 
-class UserFavorite(BaseModel):
-    id = PrimaryKeyField()
-    user = ForeignKeyField(User)
-    gist = CharField()
-    name = CharField(unique=True)
-
-    def __str__(self):
-        return self.name
+class GistReference(BaseModel):
+    gist = CharField(unique=True)
 
     class Meta:
-        db_table = 'gsfr_user_favorite'
+        db_table = 'gsfr_gist_reference'
 
 
-models = [User, UserRelationship, UserGithub, UserFavorite]
+class UserGistFavorite(BaseModel):
+    user = ForeignKeyField(User)
+    gist = ForeignKeyField(GistReference)
+
+    class Meta:
+        db_table = 'gsfr_user_gist_favorite'
+
+
+class Rating(BaseModel):
+    name = CharField(unique=True)
+
+    class Meta:
+        db_table = 'gsfr_rating'
+
+
+class UserGistRating(BaseModel):
+    user = ForeignKeyField(User)
+    gist = ForeignKeyField(GistReference)
+    rating = ForeignKeyField(Rating)
+
+    class Meta:
+        db_table = 'gsfr_user_gist_rating'
+
+
+models = [User, UserRelationship, UserGithub, UserGistFavorite, UserGistRating, GistReference, Rating]
 create_model_tables(models, fail_silently=True)

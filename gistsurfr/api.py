@@ -2,7 +2,7 @@ from flask_peewee.rest import RestAPI, RestResource, UserAuthentication, AdminAu
 
 from gistsurfr.app import app
 from gistsurfr.auth import auth
-from gistsurfr.models import User, UserRelationship, UserGithub, UserFavorite
+from gistsurfr.models import User, UserRelationship, UserGithub, UserGistFavorite
 
 
 user_auth = UserAuthentication(auth)
@@ -32,4 +32,4 @@ class FavoriteResource(RestResource):
 api.register(User, UserResource, auth=admin_auth)
 api.register(UserGithub, UserGithubResource, auth=admin_auth)
 api.register(UserRelationship, UserRelationshipResource, auth=user_auth)
-api.register(UserFavorite, FavoriteResource, auth=user_auth)
+api.register(UserGistFavorite, FavoriteResource, auth=user_auth)
