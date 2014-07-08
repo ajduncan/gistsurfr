@@ -3,3 +3,5 @@ peewee
 # flask-peewee
 -e git+https://github.com/coleifer/flask-peewee.git#egg=flask-peewee
 -e git+git@github.com:hapyak/flask-peewee-swagger.git#egg=flask-peewee-swagger
+
+# consider: flask-oauthlib and flask-sockets for angular.
