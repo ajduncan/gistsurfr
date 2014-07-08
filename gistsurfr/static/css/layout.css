@@ -9,12 +9,21 @@ p, h1, h2, h3 {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.filler {
-	border-top: 1px solid #000;
-	top: 0px;
-	bottom: 0px;
-	height: 100%;
+html, body, #content { 
+	height: 100%; 
 }
+
+body > #container { 
+	height: auto;
+	min-height: 100%;
+}
+
+#content {
+	border-top: 1px solid #000;
+	top: 10px;
+	bottom: 0px;
+}
+
 
 .flash { 
 	background: #CEE5F5; 
@@ -23,8 +32,8 @@ p, h1, h2, h3 {
 }
 
 #footer  {
-	padding: 0; 
-	bottom: 0px;
+	position: relative;
+	clear: both;
 	background-color: #222;
 }
 

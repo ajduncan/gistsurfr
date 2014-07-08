@@ -9,9 +9,9 @@
   </div>
 </div>
 
-<div class="filler">
+<div id="content">
 {% if user %}
-<p>Welcome, {{ user.username }}!</p>
+<p>Welcome, <img src="{{ user.gravatar_url() }}"> {{ user.username }}!</p>
 {% endif %}
 </div>
 {% endblock %}

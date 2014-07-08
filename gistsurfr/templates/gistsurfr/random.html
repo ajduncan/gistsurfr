@@ -1,0 +1,10 @@
+{% extends 'gistsurfr/base.html' %}
+
+{% block content %}
+<div id="content">
+	<h1>A random gist appears</h1>
+	{% for k, v in gist["files"].items() %}
+		<p>{{ k }}: {{ v }}</p>
+	{% endfor %}
+</div>
+{% endblock %}

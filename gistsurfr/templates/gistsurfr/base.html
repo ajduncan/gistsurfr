@@ -35,12 +35,11 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						{% if session.logged_in %}
-						<li><a href="#">Account</a></li>
+						<li><a href="{{ url_for('account') }}">Account</a></li>
 						<li><a href="{{ url_for('index') }}">Favorites</a></li>
-						<li><a href="#">Randoms</a></li>
 						<li><a href="{{ url_for('auth.logout') }}">Sign out</a></li>
 						{% else %}
-						<li><a href="{{ url_for('auth.login') }}">Sign in</a></li>
+						<li><a href="{{ url_for('authorize') }}">Sign in</a></li>
 						{% endif %}
 					</ul>
 				</div>
@@ -49,7 +48,7 @@
 
 		{% block jumbotron %}{% endblock %}
 		
-		<div id="content">
+		<div id="container">
 		{% for message in get_flashed_messages() %}
 			<div class=flash>{{ message }}</div>
 		{% endfor %}
