@@ -4,7 +4,14 @@
 <div id="content">
 	<h1>A random gist appears</h1>
 	{% for k, v in gist["files"].items() %}
-		<p>{{ k }}: {{ v }}</p>
+		{% for a, b in v.items() %}
+			{% if a == 'filename' %}
+				<p>{{ b }}</p>
+			{% endif %}
+			{% if a == 'content' %}
+				<p><pre>{{ b }}</pre></p>
+			{% endif %}
+		{% endfor %}
 	{% endfor %}
 </div>
 {% endblock %}
